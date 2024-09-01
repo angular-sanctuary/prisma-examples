@@ -1,0 +1,55 @@
+<script lang="ts">
+import { RouterLink, RouterLinkActive } from '@angular/router'
+
+  defineMetadata({ imports: [RouterLink, RouterLinkActive] });
+</script>
+
+<template>
+<nav>
+  <div class="left">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Blog
+    </a>
+    <a routerLink="/drafts" routerLinkActive="active">Drafts</a>
+  </div>
+  <div class="right">
+    <a routerLink="/signup" routerLinkActive="active">Signup</a>
+    <a routerLink="/create" routerLinkActive="active">+ Create draft</a>
+  </div>
+</nav>
+</template>
+
+<style>
+nav {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+}
+
+.left a.active {
+  color: gray;
+}
+
+a+a {
+  margin-left: 1rem;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.right a {
+  border: 1px solid black;padding: 0.5rem 1rem;
+    border-radius: 3px;
+  }
+</style>
